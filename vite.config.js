@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
+  base: '/Muscle3D/',
   server: {
     proxy: {
       // API 요청만 프록시
