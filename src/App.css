@@ -1,0 +1,102 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.left-panel {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background: #222;
+  overflow: hidden;
+}
+
+.overlay-title {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  z-index: 10;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  letter-spacing: 1px;
+}
+
+.right-panel {
+  width: 50%;
+  height: 100%;
+  background: #f4f4f4;
+  overflow-y: auto;
+  cursor: default;
+}
+
+/* PC 기본(좌우 분할, 60:40) */
+.container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.left-panel {
+  position: relative;
+  width: 60%;
+  height: 100%;
+  background: #222;
+  overflow: hidden;
+}
+
+.right-panel {
+  width: 40%;
+  height: 100%;
+  background: #f4f4f4;
+  overflow-y: auto;
+  cursor: default;
+}
+
+/* ---- 반응형: 모바일/태블릿(800px 이하) ---- */
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column;
+    height: 100vh;
+    min-height: 100vh;
+  }
+  .left-panel {
+    width: 100%;
+    height: 60vh;    /* 화면 높이의 60% */
+    min-height: 240px;
+    max-height: 70vh;
+  }
+  .right-panel {
+    width: 100%;
+    height: 40vh;    /* 화면 높이의 40% */
+    min-height: 160px;
+    max-height: 60vh;
+  }
+  .overlay-title {
+    font-size: 1.1rem;
+    top: 12px;
+    left: 12px;
+  }
+}
+@media (max-width: 600px) {
+  .overlay-title {
+    font-size: 1rem;
+    top: 10px;
+    left: 10px;
+  }
+  .right-panel,
+  .left-panel {
+    padding: 0.5rem !important;
+  }
+}
+
+
+
